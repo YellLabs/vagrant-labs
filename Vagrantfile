@@ -42,7 +42,7 @@ Vagrant::Config.run do |config|
     create_vm(config, :gapp1, "172.16.200.61")
 
     create_vm(config, :japp0, "172.16.200.70")
-    create_vm(config, :japp0, "172.16.200.71")
+    create_vm(config, :japp1, "172.16.200.71")
 
     create_vm(config, :plapp0, "172.16.200.80")
     create_vm(config, :plapp1, "172.16.200.81")
