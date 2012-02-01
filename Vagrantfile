@@ -58,6 +58,8 @@ Vagrant::Config.run do |config|
     create_vm(config, :es0, "172.16.200.120")
     create_vm(config, :es1, "172.16.200.121")
 
+    create_vm(config, :mg0, "172.16.200.130")
+
 
     # Misc.
     create_vm(config, :mon0)
