@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source :rubygems
 
 gem "vagrant", "~> 0.9"
 gem "vagrant-vbguest", "~> 0.2"
