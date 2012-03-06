@@ -1,5 +1,6 @@
 source "http://rubygems.org"
-gem "vagrant", "0.8.7"
-gem "vagrant-vbguest", "0.0.3"
-gem "veewee"
-gem "sahara"
+
+gem "vagrant", "~> 0.9"
+gem "vagrant-vbguest", "~> 0.2"
+gem "veewee", "~> 0.2.3"
+gem "sahara", "~> 0.0.10"

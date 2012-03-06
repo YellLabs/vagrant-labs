@@ -8,10 +8,10 @@ def create_vm(config, name, network=false, puppet=true)
 
         fqdn = "#{name}.#{domain}"
         c.vm.host_name = fqdn
-        c.vm.customize { |v| v.name = fqdn }
+        c.vm.customize(["modifyvm", :id, "--name", fqdn])
 
         if network
-            c.vm.network(network)
+            c.vm.network(:hostonly, network)
         end
 
         if puppet
