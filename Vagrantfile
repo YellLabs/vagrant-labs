@@ -2,7 +2,7 @@ def create_vm(config, name, network=false, puppet=true)
     domain = "yelllabs"
 
     config.vm.define name do |c|
-        c.vm.box = "centos57-puppet26"
+        c.vm.box = "centos58-puppet26"
         c.ssh.max_tries = 100
         c.ssh.forward_agent = true
 
