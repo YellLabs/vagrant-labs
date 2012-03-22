@@ -9,7 +9,11 @@ def create_vm(config, name, network=false, puppet=true)
         c.ssh.forward_agent = true
 
         c.vm.host_name = fqdn
-        c.vm.customize(["modifyvm", :id, "--name", fqdn])
+        c.vm.customize(["modifyvm", :id,
+            "--name", fqdn,
+            # Workaround for https://github.com/mitchellh/vagrant/issues/516
+            "--nictype1", "Am79C973"
+        ])
 
         if network
             c.vm.network(:hostonly, network)
