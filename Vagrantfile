@@ -1,3 +1,10 @@
+# Available options:
+#
+#   :box        Set the base box.
+#   :ip         Set the static IP of an additional interface.
+#   :network    Set the additional interface type - :hostonly, :bridged
+#   :puppet     Set to false to disable Puppet provisioning.
+
 domain  = "yelllabs"
 nodes   = {
     # Load balancing.
