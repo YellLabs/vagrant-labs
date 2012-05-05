@@ -61,7 +61,7 @@ Vagrant::Config.run do |config|
             c.vm.customize(["modifyvm", :id,
                 "--name", fqdn,
                 # workaround for https://github.com/mitchellh/vagrant/issues/516
-                "--nictype1", "am79c973"
+                "--nictype1", "Am79C973"
             ])
 
             if node_opts[:network] == :bridged
