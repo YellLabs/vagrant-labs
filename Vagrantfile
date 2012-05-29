@@ -4,6 +4,7 @@
 #   :ip         Set the static IP of an additional interface.
 #   :network    Set the additional interface type - :hostonly, :bridged
 #   :puppet     Set to false to disable Puppet provisioning.
+#   :memory     Override a basebox's default RAM allocation - numeric in MB.
 
 domain  = "yelllabs"
 nodes   = {
@@ -64,6 +65,10 @@ Vagrant::Config.run do |config|
 
             # workaround for https://github.com/mitchellh/vagrant/issues/516
             modifyvm_args << '--nictype1' << 'Am79C973'
+
+            unless node_opts[:memory].nil?
+                modifyvm_args << '--memory' << node_opts[:memory].to_s
+            end
 
             c.vm.customize(modifyvm_args)
 
