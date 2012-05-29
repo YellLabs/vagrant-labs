@@ -5,6 +5,8 @@
 #   :network    Set the additional interface type - :hostonly, :bridged
 #   :puppet     Set to false to disable Puppet provisioning.
 #   :memory     Override a basebox's default RAM allocation - numeric in MB.
+#                   Note: the default value for an existing box will not be
+#                   restored until the box is destroyed and recreated.
 
 domain  = "yelllabs"
 nodes   = {
