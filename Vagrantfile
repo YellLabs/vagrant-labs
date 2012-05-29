@@ -58,11 +58,14 @@ Vagrant::Config.run do |config|
 
             fqdn = "#{node_name}.#{domain}"
             c.vm.host_name = fqdn
-            c.vm.customize(["modifyvm", :id,
-                "--name", fqdn,
-                # workaround for https://github.com/mitchellh/vagrant/issues/516
-                "--nictype1", "Am79C973"
-            ])
+
+            modifyvm_args = ['modifyvm', :id]
+            modifyvm_args << '--name' << fqdn
+
+            # workaround for https://github.com/mitchellh/vagrant/issues/516
+            modifyvm_args << '--nictype1' << 'Am79C973'
+
+            c.vm.customize(modifyvm_args)
 
             if node_opts[:network] == :bridged
                 c.vm.network(:bridged)
