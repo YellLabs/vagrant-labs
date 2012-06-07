@@ -47,7 +47,8 @@ nodes   = {
 
     # Misc.
     :mon0 => {},
-    :rpmbuild => {},
+    :rpmbuild5 => {},
+    :rpmbuild6 => { :box => 'centos62-puppet26' }
 }
 
 Vagrant::Config.run do |config|
