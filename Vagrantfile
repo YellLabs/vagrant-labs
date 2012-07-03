@@ -52,6 +52,7 @@ nodes   = {
 
 
     # Misc.
+    :pm0 => { :ip => "172.16.200.230" },
     :mon0 => {},
     :rpmbuild5 => {},
     :rpmbuild6 => { :box => 'centos62-puppet26' }
