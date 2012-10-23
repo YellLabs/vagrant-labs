@@ -84,6 +84,10 @@ Vagrant::Config.run do |config|
             # workaround for https://github.com/mitchellh/vagrant/issues/516
             modifyvm_args << '--nictype1' << 'Am79C973'
 
+            # Isolate guests from host networking.
+            modifyvm_args << '--natdnsproxy1' << 'on'
+            modifyvm_args << '--natdnshostresolver1' << 'on'
+
             unless node_opts[:memory].nil?
                 modifyvm_args << '--memory' << node_opts[:memory].to_s
             end
